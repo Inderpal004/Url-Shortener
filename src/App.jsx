@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Auth from './pages/Auth';
 import Link from './pages/Link';
 import RedirectLink from './pages/RedirectLink';
+import UrlProvider from './context';
 
 function App() {
 
@@ -37,7 +38,11 @@ function App() {
     }
   ])
 
-  return <RouterProvider router={router}/>
+  return (
+    <UrlProvider>
+      <RouterProvider router={router}/>
+    </UrlProvider>
+  )
 }
 
 export default App
