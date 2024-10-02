@@ -7,6 +7,7 @@ import Auth from './pages/Auth';
 import Link from './pages/Link';
 import RedirectLink from './pages/RedirectLink';
 import UrlProvider from './context';
+import RequireAuth from './components/require-auth';
 
 function App() {
 
@@ -20,7 +21,9 @@ function App() {
         },
         {
           path:'/dashboard',
-          element:<Dashboard/>
+          element:<RequireAuth>
+            <Dashboard/>
+          </RequireAuth>
         },
         {
           path:'/auth',
@@ -28,7 +31,9 @@ function App() {
         },
         {
           path:'/link/:id',
-          element:<Link/>
+          element:<RequireAuth>
+            <Link/>
+          </RequireAuth>
         },
         {
           path:'/:id',

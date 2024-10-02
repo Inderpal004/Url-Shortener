@@ -54,6 +54,7 @@ export default function Signup() {
             await schema.validate(formData, { abortEarly: false });
 
             await fnSignup(); // Call the signup API
+            console.log(formData);
 
         } catch (validationError) {
             const validationErrors = {};

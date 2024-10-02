@@ -8,7 +8,7 @@ export async function login({ email, password }) {
     })
 
     if (error) throw new Error(error.message);
-
+    console.log('Login :--', data);
     return data;
 }
 
@@ -39,5 +39,11 @@ export async function signup({ name, email, password, profile_pic }) {
     });
 
     if (signUpError) throw new Error(signUpError.message);
+    console.log(data);
     return data; 
+}
+
+export async function logout() {
+    let {error} = await supabase.auth.signOut();
+    if (error) throw new Error(error.message);
 }
