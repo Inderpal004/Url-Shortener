@@ -28,13 +28,13 @@ export default function LinkCard({url,fetchUrls}) {
       <img src={url?.qr} alt='qr code' className='h-32 object-contain ring ring-blue-500 self-start'/>
       <Link className='flex flex-col flex-1' to={`/link/${url?.id}`}>
       <span className='text-3xl font-extrabold hover:underline cursor-pointer'>{url.title}</span>
-      <span className='text-xl text-blue-400 font-bold hover:underline cursor-pointer'>https://trimmer.in/{url?.custom_url ? url?.custom_url : url.short_url}</span>
+      <span className='text-xl text-blue-400 font-bold hover:underline cursor-pointer'>https://urltrimmingg.in/{url?.custom_url ? url?.custom_url : url.short_url}</span>
       <span className='flex items-center gap-1 hover:underline cursor-pointer'>{url?.original_url}</span>
       <span className='flex items-end font-extralight text-sm flex-1'>{new Date(url?.created_at).toLocaleString()}</span>
       </Link>
 
       <div className='flex gap-2'>
-            <Button variant='ghost' onClick={()=> navigator.clipboard.writeText(`https://trimmer.in/${url?.short_url}`)}><Copy size={18}/></Button>
+            <Button variant='ghost' onClick={()=> navigator.clipboard.writeText(`https://urltrimmingg.in/${url?.short_url}`)}><Copy size={18}/></Button>
             <Button variant='ghost' onClick={downloadImage}><Download size={18}/></Button>
             <Button variant='ghost' onClick={()=> fnDelete().then(()=> fetchUrls())}>{loadingDelete ? <BeatLoader size={5} color='white'/>  : <Trash size={18}/>}</Button>
       </div>
