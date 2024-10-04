@@ -1,4 +1,7 @@
+import DeviceInfo from '@/components/DeviceInfo';
+import Location from '@/components/Location';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UrlState } from '@/context';
 import { getClicksForUrl } from '@/db/apiClicks';
 import { deleteUrl, getUrl } from '@/db/apiUrls';
@@ -64,12 +67,39 @@ export default function Link() {
             <Button variant='ghost' onClick={downloadImage}><Download size={18} /></Button>
             <Button variant='ghost' onClick={() => fnDelete()}>{loadingDelete ? <BeatLoader size={5} color='white' /> : <Trash size={18} />}</Button>
           </div>
-          <img src={url?.qr} alt='qr code' className='w-[75%] self-center sm:self-start ring ring-blue-400 p-1 object-contain'/>
+          <img src={url?.qr} alt='qr code' className='w-[75%] self-center sm:self-start ring ring-blue-400 p-1 object-contain' />
         </div>
 
-        <div className='sm:w-3/5'>
+        <Card className='sm:w-3/5'>
+          <CardHeader>
+            <CardTitle className="text-4xl font-extrabold">Stats</CardTitle>
+          </CardHeader>
+          {
+            stats && stats?.length ? (
+              <CardContent className="flex flex-col gap-6">
+                <Card >
+                  <CardHeader>
+                    <CardTitle>Total Clicks</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{stats?.length}</p>
+                  </CardContent>
+                </Card>
 
-        </div>
+              <CardTitle>Location Data</CardTitle>
+              <Location stats={stats}/>
+              <CardTitle>Device Info</CardTitle>
+              <DeviceInfo stats={stats}/>
+
+              </CardContent>
+            ) : (
+              <CardContent>
+                <p> {loadingStats === false ? "No Statistics yet" : 'Loading Statistics...'}</p>
+              </CardContent>
+            )
+          }
+        </Card>
+
       </div>
     </>
   )
