@@ -27,7 +27,7 @@ export default function Header() {
     return (
        <>
         <nav className='py-4 flex justify-between items-center'>
-            <Link to='/'><img className='h-20' src="/newLogoNew.png" alt="Logo" /></Link>
+            <Link to='/'><img className='h-16' src="/newLogoNew.png" alt="Logo" /></Link>
 
             <div>
                 {
@@ -43,10 +43,10 @@ export default function Header() {
 
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
-                                    <DropdownMenuLabel>{user?.user_metadata?.name}</DropdownMenuLabel>
+                                    <DropdownMenuLabel className="text-[16px]">{user?.user_metadata?.name}</DropdownMenuLabel>
                                     <DropdownMenuSeparator />
-                                    <DropdownMenuItem><Link className='flex items-center' to='/dashboard'> <Link2 className='mr-3 w-5'/> <span>My Links</span></Link></DropdownMenuItem>
-                                    <DropdownMenuItem className='text-red-400' onClick={() => navigate('/')}> <LogOut className='mr-3 w-4'/> <span onClick={()=> fnLogout().then(()=>{fetchUser(); navigate('/')})}>Logout</span> </DropdownMenuItem>
+                                    <DropdownMenuItem><Link className='flex items-center' to='/dashboard'> <Link2 className='mr-3 w-5'/> <span className="text-[15px]" >My Links</span></Link></DropdownMenuItem>
+                                    <DropdownMenuItem className='text-red-400' onClick={() => navigate('/')}> <LogOut className='mr-3 w-4'/> <span className="text-[15px]" onClick={()=> fnLogout().then(()=>{fetchUser(); navigate('/')})}>Logout</span> </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         )

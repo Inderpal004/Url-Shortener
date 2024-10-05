@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 export default function AppLayout() {
   return (
     <div>
-      <main className='min-h-screen container m-auto'>
+      <main className='min-h-screen w-[90%] container m-auto'>
         <Header/>
         <Outlet/>
         {/* Body */}

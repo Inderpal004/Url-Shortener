@@ -53,10 +53,10 @@ export default function Link() {
       {(loading || loadingStats) && (
         <BarLoader className='mb-4' width={"100%"} color='#36d7b7' />
       )}
-      <div className='flex flex-col gap-8 sm:flex-row justify-between'>
-        <div className='flex flex-col items-start gap-6 rounded-lg sm:w-2/5'>
-          <span className='text-4xl font-extrabold hover:underline cursor-pointer'>{url?.title}</span>
-          <a className='text-2xl sm:text-3xl text-blue-400 font-bold hover:underline cursor-pointer' target='_blank' href={`${import.meta.env.VITE_WEB_URL}/${link}`}>{import.meta.env.VITE_WEB_URL}/{link}</a>
+      <div className='flex mt-5 flex-col gap-8 sm:flex-row justify-between'>
+        <div className='flex flex-col items-start gap-4 rounded-lg sm:w-2/5'>
+          <span className='text-3xl font-extrabold hover:underline cursor-pointer'>{url?.title}</span>
+          <a className='text-xl sm:text-3xl text-blue-400 font-bold hover:underline cursor-pointer' target='_blank' href={`${import.meta.env.VITE_WEB_URL}/${link}`}>{import.meta.env.VITE_WEB_URL}/{link}</a>
           <a className='flex items-center gap-1 hover:underline cursor-pointer' target='_blank' href={url?.original_url}>
             <LinkIcon className='p-1' />
             {url?.original_url}</a>
@@ -72,7 +72,7 @@ export default function Link() {
 
         <Card className='sm:w-3/5'>
           <CardHeader>
-            <CardTitle className="text-4xl font-extrabold">Stats</CardTitle>
+            <CardTitle className="text-3xl font-extrabold">Stats</CardTitle>
           </CardHeader>
           {
             stats && stats?.length ? (
@@ -82,13 +82,13 @@ export default function Link() {
                     <CardTitle>Total Clicks</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p>{stats?.length}</p>
+                    <p className='text-[21px] font-semibold'>{stats?.length}</p>
                   </CardContent>
                 </Card>
 
-              <CardTitle>Location Data</CardTitle>
+              <CardTitle className="mt-3">Location Data</CardTitle>
               <Location stats={stats}/>
-              <CardTitle>Device Info</CardTitle>
+              <CardTitle className="mt-3">Device Info</CardTitle>
               <DeviceInfo stats={stats}/>
 
               </CardContent>

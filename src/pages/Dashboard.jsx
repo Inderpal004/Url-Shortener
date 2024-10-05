@@ -42,7 +42,7 @@ export default function Dashboard() {
 
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-8 mt-2'>
       {
       loading || loadingClicks && <BarLoader width={"100%"} color='#36d7b7' />
       }
@@ -50,25 +50,25 @@ export default function Dashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Links Created</CardTitle>
+            <CardTitle className="text-2xl">Links Created</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{urls?.length || 0}</p>
+            <p className='text-[21px] font-semibold'>{urls?.length || 0}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Total Clicks</CardTitle>
+            <CardTitle className="text-2xl">Total Clicks</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{clicks?.length || 0}</p>
+            <p className='text-[21px] font-semibold'>{clicks?.length || 0}</p>
           </CardContent>
         </Card>
       </div>
 
       <div className='flex justify-between items-center'>
-        <h1 className='text-4xl font-extrabold'>My Links</h1>
+        <h1 className='text-3xl font-extrabold'>My Links</h1>
        <CreateLink/>
       </div>
 
