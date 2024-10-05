@@ -15,7 +15,7 @@ A modern URL shortener application built with **React** (Vite), **Supabase** for
 
 ## Demo
 
-[Live Demo](https://trimming.vercel.app) – Explore the app in action.
+[Live Demo](https://trrimm.vercel.app/) – Explore the app in action.
 
 ## Getting Started
 
