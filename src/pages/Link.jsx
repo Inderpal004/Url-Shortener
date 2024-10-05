@@ -56,14 +56,14 @@ export default function Link() {
       <div className='flex flex-col gap-8 sm:flex-row justify-between'>
         <div className='flex flex-col items-start gap-6 rounded-lg sm:w-2/5'>
           <span className='text-4xl font-extrabold hover:underline cursor-pointer'>{url?.title}</span>
-          <a className='text-2xl sm:text-3xl text-blue-400 font-bold hover:underline cursor-pointer' target='_blank' href={`https://trimming.vercel.app/${link}`}>https://trimming.vercel.app/{link}</a>
+          <a className='text-2xl sm:text-3xl text-blue-400 font-bold hover:underline cursor-pointer' target='_blank' href={`${import.meta.env.VITE_WEB_URL}/${link}`}>{import.meta.env.VITE_WEB_URL}/{link}</a>
           <a className='flex items-center gap-1 hover:underline cursor-pointer' target='_blank' href={url?.original_url}>
             <LinkIcon className='p-1' />
             {url?.original_url}</a>
           <span className='flex items-end font-extralight text-sm'>{new Date(url?.created_at).toLocaleString()}</span>
 
           <div className='flex gap-2'>
-            <Button variant='ghost' onClick={() => navigator.clipboard.writeText(`https://urltrimmingg.in/${url?.short_url}`)}><Copy size={18} /></Button>
+            <Button variant='ghost' onClick={() => navigator.clipboard.writeText(`${import.meta.env.VITE_WEB_URL}/${url?.short_url}`)}><Copy size={18} /></Button>
             <Button variant='ghost' onClick={downloadImage}><Download size={18} /></Button>
             <Button variant='ghost' onClick={() => fnDelete()}>{loadingDelete ? <BeatLoader size={5} color='white' /> : <Trash size={18} />}</Button>
           </div>

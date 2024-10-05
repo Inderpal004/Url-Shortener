@@ -27,7 +27,7 @@ export default function Header() {
     return (
        <>
         <nav className='py-4 flex justify-between items-center'>
-            <Link to='/'><img className='h-20' src="/new-logo.png" alt="Logo" /></Link>
+            <Link to='/'><img className='h-20' src="/newLogoNew.png" alt="Logo" /></Link>
 
             <div>
                 {
